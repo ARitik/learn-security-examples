@@ -1,1 +1,5 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability arises from attackers manipulating the application's inputs to induce unintended actions. Because the server blindly executes any input received from the user, malicious actors can inject harmful code or links directly into the form, leading to unexpected server behavior.
+
+The secure version of the code addresses this vulnerability by implementing input sanitization. This process ensures that any input from the user undergoes filtering to remove any potentially harmful script, preventing malicious code execution on the server. This safeguard maintains the integrity of the data by thwarting unauthorized alterations and preserving its intended state during storage, transmission, or processing.

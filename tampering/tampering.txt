@@ -1,0 +1,7 @@
+Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability lies in the session management process, where the session ID, once created, is stored in the browser's cookie. If this session ID is compromised, it can be exploited to impersonate a legitimate user, such as an admin, since possession of the session ID grants unauthorized access to the session data.
+
+In the insecure version, the session ID is sent in the request header, making it susceptible to theft. However, the secure version addresses this issue by configuring the middleware to set the session ID in the browser's cookie with the "httpOnly" attribute set to true. This prevents client-side scripts from accessing the cookie. Additionally, the "sameSite" attribute is set to true, preventing the session from being sent to another site, enhancing security.
+
+By implementing these measures, the secure version ensures that requests are more reliable indicators of legitimate client activity. Spoofing attacks, which involve unauthorized access by masquerading as another user, compromise confidentiality by exposing sensitive information to unauthorized entities.
